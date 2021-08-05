@@ -22,12 +22,16 @@ def translate(word):
                 return "The word does not exist. Please double check it."
                 break
             else:
-                print('Looks like you did not type Y or N, please enter again: ')
+                print('Looks like you did not type Y or N, please enter again.')
                 continue
     else:
         return "The word does not exist. Please double check it."
 
 word = input('Enter the word: ')
+output = translate(word)
 
-for definitions in translate(word):
-    print(definitions)
+if type(output) == list:
+    for item in output:
+        print(item)
+else:
+    print(output)
